@@ -11,11 +11,15 @@ environment:
 #  vania: ^0.5.0
 
 dependencies:
-  shelf: ^1.2.0
-  shelf_router: ^1.0.0
-
-
+  shelf:
+  shelf_router:
+  drift:
+  sqlite3:
+  path:
+  crypto:
+  sqlite3_flutter_libs:
 
 dev_dependencies:
-  lints: ^4.0.0
-  test: ^1.24.0
+  build_runner:
+  drift_dev:
+
