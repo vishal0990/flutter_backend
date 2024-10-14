@@ -4,7 +4,6 @@ import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_router/shelf_router.dart';
 import 'dart:convert'; // Add this import
 
-
 void main() async {
   // Create a router for handling routes
   final router = Router();
@@ -15,15 +14,16 @@ void main() async {
   });
 
   // Another route that returns JSON data
-router.get('/user/<id>', (Request request, String id) {
-  final user = {
-    'id': id,
-    'name': 'John Doe',
-    'email': 'john.doe@example.com',
-  };
-  // Return a JSON string
-  return Response.ok(jsonEncode(user), headers: {'Content-Type': 'application/json'});
-});
+  router.get('/user/<id>', (Request request, String id) {
+    final user = {
+      'id': id,
+      'name': 'John Doe',
+      'email': 'john.doe@example.com',
+    };
+    // Return a JSON string
+    return Response.ok(jsonEncode(user),
+        headers: {'Content-Type': 'application/json'});
+  });
 
   // Start the server
   final server = await shelf_io.serve(
